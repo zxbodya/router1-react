@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/zxbodya/router1.git"
+    "url": "git+ssh://git@github.com/zxbodya/router1-react.git"
   },
   "keywords": [
     "router",
@@ -36,7 +36,7 @@
     "eslint": "^1.9.0",
     "eslint-config-airbnb": "^1.0.0",
     "eslint-plugin-react": "^3.8.0",
-    "rimraf": "^2.4.4",
+    "rimraf": "^2.4.4"
   },
   "dependencies": {
     "babel-runtime": "^5.8.29"
