@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 class Link extends Component {
   render() {
-    const {href, route, params, hash, className, activeClassName, onClick: onClickOriginal} = this.props;
+    const {href, route, params, hash, className, activeClassName, onClick: onClickOriginal, target} = this.props;
     const {router} = this.context;
 
     if (!router) {
@@ -19,24 +19,34 @@ class Link extends Component {
     let url;
     let onClick;
     let isActive;
+
     if (href) {
       url = href;
-      onClick = (e)=> {
-        if (onClickOriginal) onClickOriginal(e);
-        e.preventDefault();
-        router.navigateToUrl(href);
-      };
-      isActive = false; // todo:
+      isActive = false; // todo: parse url and chack if it is active
     } else {
       url = router.createUrl(route, params, hash);
-      onClick = (e)=> {
-        if (onClickOriginal) onClickOriginal(e);
-        e.preventDefault();
-        router.navigate(route, params, hash);
-      };
-
       isActive = router.isActive(route, params);
     }
+
+    onClick = (event)=> {
+      if (onClickOriginal) onClickOriginal(event);
+
+      if (!event.defaultPrevented) {
+        if (
+          // if target is set
+        target
+          // or it was not left mouse button click
+        || event.button !== 0
+          // or if one modifier keys was pressed
+        || event.metaKey || event.altKey || event.ctrlKey || event.shiftKey
+        // let browser to handle it
+        ) return;
+
+        event.preventDefault();
+        router.navigateToUrl(url);
+      }
+    };
+
     const props = Object.assign(
       {},
       this.props, {
@@ -55,6 +65,7 @@ class Link extends Component {
 
 Link.propTypes = {
   onClick: PropTypes.func,
+  target: PropTypes.string,
   route: PropTypes.string,
   href: PropTypes.string,
   params: PropTypes.object,
