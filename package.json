@@ -1,6 +1,6 @@
 {
   "name": "router1-react",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React components to use with router1",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
@@ -43,6 +43,6 @@
     "babel-runtime": "^6.3.19"
   },
   "peerDependencies": {
-    "router1": "^0.2.0"
+    "router1": "^0.3.0"
   }
 }

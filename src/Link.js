@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
 function Link(props, context) {
-  const { href, route, params, hash, className, activeClassName, onClick: onClickOriginal, target, data } = props;
+  const { href, route, params, hash, className, activeClassName, onClick: onClickOriginal, target, state } = props;
   const { router } = context;
 
   if (!router) {
@@ -41,7 +41,7 @@ function Link(props, context) {
       ) return;
 
       event.preventDefault();
-      router.navigateToUrl(url, data);
+      router.navigateToUrl(url, state);
     }
   };
 
@@ -70,6 +70,7 @@ Link.propTypes = {
   children: PropTypes.any,
   className: PropTypes.string,
   activeClassName: PropTypes.string,
+  state: PropTypes.object,
 };
 
 Link.contextTypes = {

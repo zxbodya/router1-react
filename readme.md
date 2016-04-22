@@ -36,7 +36,7 @@ Also you can pass additional state data(to be used later when handling route cha
   route="contact"
   activeClassName="active"
   params={{routeParam: "value"}}
-  data={{ noscroll: true }}
+  state={{ noscroll: true }}
 >
   Contact
 </Link>
