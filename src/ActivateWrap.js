@@ -1,31 +1,33 @@
-import React, {PropTypes, Component} from 'react';
+import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
 // todo: subscribe for route changes
-class ActivateWrap extends Component {
-  render() {
-    const {component, activeClass, route, params, className} = this.props;
+function ActivateWrap(props, context) {
+  const { component, activeClass, route, params, className } = props;
 
-    const {router} = this.context;
+  const { router } = context;
 
-    if (!router) {
-      console.error('No router in context');
+  if (!router) {
+    console.error('No router in context');
 
-      return React.createElement(
-        component,
-        this.props
-      );
-    }
-
-    // todo: by href
-    const isActive = router.isActive(route, params);
-    const props = Object.assign({}, this.props, {className: classnames(className || '', {[activeClass || 'active']: isActive})});
     return React.createElement(
       component,
-      props,
-      props.children
+      props
     );
   }
+
+  // todo: by href
+  const isActive = router.isActive(route, params);
+  const componentProps = Object.assign(
+    {},
+    props,
+    { className: classnames(className || '', { [activeClass || 'active']: isActive }) }
+  );
+  return React.createElement(
+    component,
+    componentProps,
+    props.children
+  );
 }
 
 ActivateWrap.propTypes = {
@@ -35,6 +37,7 @@ ActivateWrap.propTypes = {
   route: PropTypes.string,
   href: PropTypes.string,
   params: PropTypes.object,
+  children: PropTypes.any,
 };
 
 ActivateWrap.contextTypes = {

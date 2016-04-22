@@ -28,7 +28,19 @@ Used to generate links with router1, handle user clicks and to highlight active 
 ```JSX
 <Link route="contact" activeClassName="active" params={{routeParam: "value"}}>Contact</Link>
 ```
+Also you can pass additional state data(to be used later when handling route change) using optional data param:
  
+
+```JSX
+<Link
+  route="contact"
+  activeClassName="active"
+  params={{routeParam: "value"}}
+  data={{ noscroll: true }}
+>
+  Contact
+</Link>
+```
 ### ActivateWrap
 
 Similar to `Link` it can be used to highlight some block when route is active.

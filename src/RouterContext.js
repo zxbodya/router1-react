@@ -1,7 +1,7 @@
 import React from 'react';
 class RouterContext extends React.Component {
   getChildContext() {
-    return {router: this.props.router};
+    return { router: this.props.router };
   }
 
   render() {
