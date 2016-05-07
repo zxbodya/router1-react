@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
 // todo: subscribe for route changes
-function ActivateWrap(props, context) {
+export function ActivateWrap(props, context) {
   const { component, activeClass, route, params, className } = props;
 
   const { router } = context;

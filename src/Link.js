@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-function Link(props, context) {
+export function Link(props, context) {
   const { href, route, params, hash, className, activeClassName, onClick: onClickOriginal, target, state } = props;
   const { router } = context;
 
