@@ -17,5 +17,3 @@ RouterContext.propTypes = {
   render: React.PropTypes.func.isRequired,
   router: React.PropTypes.object.isRequired,
 };
-
-export default RouterContext;

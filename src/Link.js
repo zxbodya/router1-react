@@ -76,5 +76,3 @@ Link.propTypes = {
 Link.contextTypes = {
   router: PropTypes.object,
 };
-
-export default Link;

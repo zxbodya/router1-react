@@ -43,5 +43,3 @@ ActivateWrap.propTypes = {
 ActivateWrap.contextTypes = {
   router: PropTypes.object,
 };
-
-export default ActivateWrap;
