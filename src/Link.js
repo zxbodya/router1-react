@@ -23,7 +23,7 @@ export function Link(props, context) {
     isActive = false; // todo: parse url and chack if it is active
   } else {
     url = router.createUrl(route, params, hash);
-    isActive = router.isActive(route, params);
+    isActive = activeClassName && router.isActive(route, params);
   }
 
   const onClick = (event) => {
@@ -51,7 +51,7 @@ export function Link(props, context) {
       href: url,
       onClick,
     },
-    { className: classnames(className || '', { [activeClassName || 'active']: isActive && activeClassName }) }
+    { className: classnames(className || '', { [activeClassName]: isActive }) }
   );
   return React.createElement(
     'a',
