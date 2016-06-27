@@ -1,10 +1,10 @@
 ## Router1 React
 
-Components to use `router1` library in your react js application.
+Components to use [https://github.com/zxbodya/router1](router1) library in react js application.
  
 ### RouterContext
 
-Used to pass `router` context variable when rendering.
+Used to pass `router` context variable into components when rendering.
 
 can be used as following: 
 
@@ -23,7 +23,7 @@ ReactDOM.render(
 
 ### Link
  
-Used to generate links with router1, handle user clicks and to highlight active links.
+Used to generate links with router1, will handle user clicks and can highlight active links.
 
 ```JSX
 <Link route="contact" activeClassName="active" params={{routeParam: "value"}}>Contact</Link>
@@ -53,3 +53,6 @@ For example, when you need to add `active` class to `li` instead of link:
 </ActivateWrap>
 ```
 
+### Example
+
+Complete example with react.js https://github.com/zxbodya/router1-app-template
