@@ -2,7 +2,19 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
 export function Link(props, context) {
-  const { href, route, params, hash, className, activeClassName, onClick: onClickOriginal, target, state } = props;
+  const {
+    href,
+    route,
+    params,
+    hash,
+    className,
+    activeClassName,
+    onClick: onClickOriginal,
+    target,
+    state,
+    ...otherProps,
+  } = props;
+
   const { router } = context;
 
   if (!router) {
@@ -10,7 +22,13 @@ export function Link(props, context) {
 
     return React.createElement(
       'a',
-      Object.assign({ href, onClickOriginal }, props),
+      {
+        href,
+        onClick: onClickOriginal,
+        className,
+        target,
+        ...otherProps,
+      },
       this.props.children
     );
   }
@@ -45,14 +63,14 @@ export function Link(props, context) {
     }
   };
 
-  const linkProps = Object.assign(
-    {},
-    props, {
-      href: url,
-      onClick,
-    },
-    { className: classnames(className || '', { [activeClassName]: isActive }) }
-  );
+  const linkProps = {
+    href: url,
+    onClick,
+    target,
+    ...otherProps,
+    className: classnames(className, isActive && activeClassName),
+  };
+
   return React.createElement(
     'a',
     linkProps,

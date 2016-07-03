@@ -6,6 +6,11 @@
     "jasmine": true,
     "node": true
   },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    },
+  },
   "rules": {
     "jsx-no-bind": 0,
     "react/jsx-no-bind": 0,

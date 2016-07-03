@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 // todo: subscribe for route changes
 export function ActivateWrap(props, context) {
-  const { component, activeClass, route, params, className } = props;
+  const { component, activeClass, route, params, className, ...otherProps } = props;
 
   const { router } = context;
 
@@ -12,17 +12,19 @@ export function ActivateWrap(props, context) {
 
     return React.createElement(
       component,
-      props
+      {
+        className,
+        ...otherProps,
+      }
     );
   }
 
   // todo: by href
   const isActive = router.isActive(route, params);
-  const componentProps = Object.assign(
-    {},
-    props,
-    { className: classnames(className || '', { [activeClass || 'active']: isActive }) }
-  );
+  const componentProps = {
+    className: classnames(className, isActive && (activeClass || 'active')),
+    ...otherProps,
+  };
   return React.createElement(
     component,
     componentProps,
