@@ -12,7 +12,7 @@ export function Link(props, context) {
     onClick: onClickOriginal,
     target,
     state,
-    ...otherProps,
+    ...otherProps
   } = props;
 
   const { router } = context;

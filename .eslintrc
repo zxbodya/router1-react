@@ -6,11 +6,6 @@
     "jasmine": true,
     "node": true
   },
-  "parserOptions": {
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
-    },
-  },
   "rules": {
     "jsx-no-bind": 0,
     "react/jsx-no-bind": 0,
@@ -20,6 +15,18 @@
       120
     ],
     "no-restricted-syntax": 0,
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "import/extensions": 0,
+    "react/forbid-prop-types": 0,
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ]
   }
 }

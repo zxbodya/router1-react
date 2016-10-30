@@ -55,4 +55,4 @@ For example, when you need to add `active` class to `li` instead of link:
 
 ### Example
 
-Complete example with react.js https://github.com/zxbodya/router1-app-template
+See [router1-app-template](https://github.com/zxbodya/router1-app-template)

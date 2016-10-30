@@ -37,8 +37,8 @@
     "babel-preset-es2015": "^6.3.13",
     "classnames": "*",
     "eslint": "^3.3.0",
-    "eslint-config-airbnb": "^10.0.1",
-    "eslint-plugin-import": "^1.7.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.1.0",
     "eslint-plugin-react": "^6.1.0",
     "react": "*",
@@ -50,8 +50,8 @@
     "babel-runtime": "^6.3.19"
   },
   "peerDependencies": {
-    "router1": "^0.5.0",
+    "classnames": "*",
     "react": "*",
-    "classnames": "*"
+    "router1": "^0.5.0"
   }
 }
