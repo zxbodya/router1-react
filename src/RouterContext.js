@@ -1,20 +1,25 @@
-import React from 'react';
+import { Component, PropTypes, Children } from 'react';
 
-export class RouterContext extends React.Component {
+export class RouterContext extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.router = props.router;
+  }
+
   getChildContext() {
-    return { router: this.props.router };
+    return { router: this.router };
   }
 
   render() {
-    return this.props.render();
+    return Children.only(this.props.children);
   }
 }
 
 RouterContext.childContextTypes = {
-  router: React.PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired,
 };
 
 RouterContext.propTypes = {
-  render: React.PropTypes.func.isRequired,
-  router: React.PropTypes.object.isRequired,
+  children: PropTypes.element.isRequired,
+  router: PropTypes.object.isRequired,
 };

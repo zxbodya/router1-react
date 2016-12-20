@@ -1,6 +1,6 @@
 ## Router1 React
 
-Components to use [https://github.com/zxbodya/router1](router1) library in react js application.
+React components to use [https://github.com/zxbodya/router1](router1) library in react js application.
  
 ### RouterContext
 
@@ -14,9 +14,9 @@ can be used as following:
 // renderApp - function that will render your app virtual dom
  
 ReactDOM.render(
-  <RouterContext
-    router={router}
-    render={renderApp}/>,
+  <RouterContext router={router}>
+    ...
+  </RouterContext>,
   appElement
 );
 ```
