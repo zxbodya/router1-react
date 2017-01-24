@@ -27,6 +27,7 @@
         "exports": "always-multiline",
         "functions": "ignore"
       }
-    ]
+    ],
+    "react/require-default-props": 0
   }
 }
