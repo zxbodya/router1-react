@@ -9,6 +9,7 @@ export function ActivateWrap(props, context) {
   const { router } = context;
 
   if (!router) {
+    // eslint-disable-next-line no-console
     console.error('No router in context');
 
     return React.createElement(

@@ -1,12 +1,12 @@
 {
   "name": "router1-react",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "React components to use with router1",
-  "main": "lib/index.js",
-  "jsnext:main": "src/index.js",
+  "main": "dist/router1-react.cjs.js",
+  "module": "dist/router1-react.es.js",
   "scripts": {
     "lint": "eslint ./src/",
-    "build": "rimraf lib && babel src --out-dir lib --source-maps",
+    "build": "rimraf dist && rollup -c",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -30,26 +30,26 @@
   },
   "homepage": "https://github.com/zxbodya/router1-react#readme",
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
-    "classnames": "*",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3",
-    "react": "^15.5.3",
-    "rimraf": "^2.6.1"
-  },
-  "dependencies": {
     "babel-runtime": "^6.23.0",
-    "prop-types": "^15.5.4"
+    "classnames": "*",
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.3.0",
+    "react": "^15.6.1",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2"
   },
   "peerDependencies": {
+    "babel-runtime": "^6.26.0",
     "classnames": "*",
+    "prop-types": "^15.5.10",
     "react": "*"
   }
 }

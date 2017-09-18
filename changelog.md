@@ -1,5 +1,9 @@
 # Changelog
 
+##0.8.0 (2017-09-18)
+
+Start using rollup to bundle library for distribution
+
 ##0.7.1  (2017-04-09)
 
 - react 15.5, start using prop-types package

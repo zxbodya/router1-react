@@ -19,6 +19,7 @@ export function Link(props, context) {
   const { router } = context;
 
   if (!router) {
+    // eslint-disable-next-line no-console
     console.error('No router in context');
 
     return React.createElement(
@@ -50,13 +51,11 @@ export function Link(props, context) {
 
     if (!event.defaultPrevented) {
       if (
-        // if target is set
-      target
-      // or it was not left mouse button click
-      || event.button !== 0
-      // or if one modifier keys was pressed
-      || event.metaKey || event.altKey || event.ctrlKey || event.shiftKey
-      // let browser to handle it
+        target // if target is set
+        // or it was not left mouse button click
+        || event.button !== 0
+        // or if one modifier keys was pressed, let browser to handle it
+        || event.metaKey || event.altKey || event.ctrlKey || event.shiftKey
       ) return;
 
       event.preventDefault();
