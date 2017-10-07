@@ -4,7 +4,14 @@ import classnames from 'classnames';
 
 // todo: subscribe for route changes
 export function ActivateWrap(props, context) {
-  const { component, activeClassName, route, params, className, ...otherProps } = props;
+  const {
+    component,
+    activeClassName,
+    route,
+    params,
+    className,
+    ...otherProps
+  } = props;
 
   const { router } = context;
 
@@ -12,13 +19,10 @@ export function ActivateWrap(props, context) {
     // eslint-disable-next-line no-console
     console.error('No router in context');
 
-    return React.createElement(
-      component,
-      {
-        className,
-        ...otherProps,
-      }
-    );
+    return React.createElement(component, {
+      className,
+      ...otherProps,
+    });
   }
 
   // todo: by href
@@ -27,11 +31,7 @@ export function ActivateWrap(props, context) {
     className: classnames(className, isActive && (activeClassName || 'active')),
     ...otherProps,
   };
-  return React.createElement(
-    component,
-    componentProps,
-    props.children
-  );
+  return React.createElement(component, componentProps, props.children);
 }
 
 ActivateWrap.propTypes = {

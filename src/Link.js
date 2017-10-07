@@ -46,17 +46,21 @@ export function Link(props, context) {
     isActive = activeClassName && router.isActive(route, params);
   }
 
-  const onClick = (event) => {
+  const onClick = event => {
     if (onClickOriginal) onClickOriginal(event);
 
     if (!event.defaultPrevented) {
       if (
-        target // if target is set
+        target || // if target is set
         // or it was not left mouse button click
-        || event.button !== 0
+        event.button !== 0 ||
         // or if one modifier keys was pressed, let browser to handle it
-        || event.metaKey || event.altKey || event.ctrlKey || event.shiftKey
-      ) return;
+        event.metaKey ||
+        event.altKey ||
+        event.ctrlKey ||
+        event.shiftKey
+      )
+        return;
 
       event.preventDefault();
       router.navigateToUrl(url, state);
@@ -71,11 +75,7 @@ export function Link(props, context) {
     className: classnames(className, isActive && activeClassName),
   };
 
-  return React.createElement(
-    'a',
-    linkProps,
-    props.children
-  );
+  return React.createElement('a', linkProps, props.children);
 }
 
 Link.propTypes = {
