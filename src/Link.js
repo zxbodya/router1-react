@@ -22,17 +22,13 @@ export function Link(props, context) {
     // eslint-disable-next-line no-console
     console.error('No router in context');
 
-    return React.createElement(
-      'a',
-      {
-        href,
-        onClick: onClickOriginal,
-        className,
-        target,
-        ...otherProps,
-      },
-      this.props.children
-    );
+    return React.createElement('a', {
+      href,
+      onClick: onClickOriginal,
+      className,
+      target,
+      ...otherProps,
+    });
   }
 
   let url;

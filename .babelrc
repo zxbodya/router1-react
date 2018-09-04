@@ -1,7 +1,7 @@
 {
   "presets": [
     [
-      "es2015",
+      "@babel/preset-env",
       {
         "loose": true,
         "modules": false
@@ -9,7 +9,7 @@
     ]
   ],
   "plugins": [
-    "transform-runtime",
-    "transform-object-rest-spread"
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-object-rest-spread"
   ]
 }

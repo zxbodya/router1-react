@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.2 (2018-09-04)
+
+- Babel 7
+
 ## 0.8.1 (2018-04-26)
 
 `"sideEffects": false` to optimize bundling 
