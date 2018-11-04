@@ -2,11 +2,12 @@
   "name": "router1-react",
   "version": "0.8.2",
   "description": "React components to use with router1",
-  "main": "dist/router1-react.cjs.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "module": "dist/router1-react.esm.js",
   "sideEffects": false,
   "scripts": {
-    "lint": "eslint ./src/",
+    "lint": "tslint --project .",
     "build": "rimraf dist && rollup -c",
     "prepublish": "npm run build"
   },
@@ -31,31 +32,32 @@
   },
   "homepage": "https://github.com/zxbodya/router1-react#readme",
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/runtime": "^7.0.0",
+    "@types/classnames": "^2.2.6",
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
     "classnames": "2.2.6",
-    "eslint": "^5.5.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.11.1",
-    "prettier": "^1.14.2",
+    "prettier": "^1.14.3",
     "prop-types": "^15.6.1",
-    "react": "^16.4.2",
+    "react": "^16.6.0",
     "rimraf": "^2.6.1",
-    "rollup": "^0.65.0",
-    "rollup-plugin-babel": "^4.0.1"
+    "rollup": "^0.67.0",
+    "rollup-plugin-typescript2": "^0.17.2",
+    "temp-dir": "^1.0.0",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.1.6"
   },
   "peerDependencies": {
-    "@babel/runtime": "^7.0.0",
     "classnames": "*",
     "prop-types": "^15.5.10",
-    "react": "*"
+    "react": "*",
+    "router1": "^0.12.1",
+    "tslib": "^1.9.3"
+  },
+  "dependencies": {
+    "router1": "^0.12.1",
+    "tslib": "^1.9.3"
   },
   "prettier": {
     "singleQuote": true,
