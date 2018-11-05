@@ -1,9 +1,8 @@
 import cx from 'classnames';
 import * as PropTypes from 'prop-types';
 import { Validator } from 'prop-types';
-import { ReactElementLike } from 'prop-types';
 import * as React from 'react';
-import { MouseEventHandler } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 import { RouteParams } from 'router1';
 import { RouterContext } from './RouterContext';
 
@@ -17,7 +16,7 @@ interface LinkProps {
   onClick?: MouseEventHandler<HTMLAnchorElement>;
   target?: string;
   state?: object;
-  children?: ReactElementLike;
+  children?: ReactNode;
 }
 
 export class Link extends React.Component<LinkProps> {

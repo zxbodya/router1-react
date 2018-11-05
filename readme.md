@@ -14,9 +14,9 @@ can be used as following:
 // renderApp - function that will render your app virtual dom
  
 ReactDOM.render(
-  <RouterContext router={router}>
+  <RouterContext.Provider value={router}>
     ...
-  </RouterContext>,
+  </RouterContext.Provider>,
   appElement
 );
 ```

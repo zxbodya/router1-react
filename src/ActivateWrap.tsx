@@ -1,9 +1,9 @@
 import classnames from 'classnames';
 import * as PropTypes from 'prop-types';
-import { ReactElementLike } from 'prop-types';
 import * as React from 'react';
 import { SFC } from 'react';
 import { ComponentClass } from 'react';
+import { ReactNode } from 'react';
 import { RouteParams } from 'router1';
 import { RouterContext } from './RouterContext';
 
@@ -15,7 +15,7 @@ interface ActiveWrapProps {
   params?: RouteParams;
   className?: string;
   activeClassName?: string;
-  children?: ReactElementLike;
+  children?: ReactNode;
 }
 
 // todo: subscribe for route changes

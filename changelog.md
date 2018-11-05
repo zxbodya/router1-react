@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.9.0 (2018-11-04)
+
+- TypeScript
+- **breaking:** switch to new react context api
+
 ## 0.8.2 (2018-09-04)
 
 - Babel 7
