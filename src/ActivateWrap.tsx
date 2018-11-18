@@ -1,7 +1,7 @@
-import classnames from 'classnames';
+import cx from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { SFC } from 'react';
+import { FC } from 'react';
 import { ComponentClass } from 'react';
 import { ReactNode } from 'react';
 import { RouteParams } from 'router1';
@@ -10,7 +10,7 @@ import { RouterContext } from './RouterContext';
 interface ActiveWrapProps {
   // todo: ?
   // href?: string;
-  component: SFC<any> | ComponentClass<any> | string;
+  component: FC<any> | ComponentClass<any> | string;
   route?: string;
   params?: RouteParams;
   className?: string;
@@ -50,10 +50,7 @@ export class ActivateWrap extends React.Component<ActiveWrapProps> {
     }
     const isActive = router.isActive(route, params);
     const componentProps = {
-      className: classnames(
-        className,
-        isActive && (activeClassName || 'active')
-      ),
+      className: cx(className, isActive && (activeClassName || 'active')),
       ...otherProps,
     };
     return React.createElement(

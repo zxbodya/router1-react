@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.1 (2018-11-18)
+
+- update dependencies
+
 ## 0.9.0 (2018-11-04)
 
 - TypeScript

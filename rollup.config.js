@@ -2,12 +2,13 @@ const typescript = require('rollup-plugin-typescript2');
 const pkg = require('./package.json');
 
 module.exports = {
-  entry: 'src/index.ts',
+  input: 'src/index.ts',
   external: ['rxjs', 'tslib'],
-  targets: [
-    { dest: pkg.main, format: 'cjs' },
-    { dest: pkg.module, format: 'es' },
+  output: [
+    { file: pkg.main, sourcemap: true, format: 'cjs' },
+    { file: pkg.module, sourcemap: true,  format: 'es' },
   ],
-  plugins: [typescript({ cacheRoot: `${require('temp-dir')}/.rpt2_cache` })],
-  sourceMap: true,
+  plugins: [
+    typescript({ cacheRoot: `${require('temp-dir')}/.rpt2_cache` }),
+  ],
 };
