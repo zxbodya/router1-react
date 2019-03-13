@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.2 (2019-03-13)
+
+- improve Link component typings
+
 ## 0.9.1 (2018-11-18)
 
 - update dependencies

@@ -6,7 +6,7 @@ import { MouseEventHandler, ReactNode } from 'react';
 import { RouteParams } from 'router1';
 import { RouterContext } from './RouterContext';
 
-interface LinkProps {
+interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href?: string;
   route?: string;
   params?: RouteParams;
